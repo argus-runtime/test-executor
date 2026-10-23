@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="A simple, calm place to organize your day. Your tasks stay in your browser.">
+  <title>Daily — your to-do list</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="masthead"><a class="brand" href="./" aria-label="Daily home"><span class="brand-mark" aria-hidden="true">✓</span> daily<span class="brand-dot">.</span></a><span class="local-label">Saved on this device</span></header>
+    <section class="intro" aria-labelledby="page-title"><p class="eyebrow" id="today">YOUR DAILY SPACE</p><h1 id="page-title">A little focus.<br>A lot of possibility.</h1><p class="subtitle">Make room for what matters. One task at a time.</p></section>
+    <section class="task-card" aria-label="Your to-do list">
+      <div class="card-heading"><h2>My tasks <span id="total-count" class="count">0</span></h2><span id="progress-label">A fresh start</span></div>
+      <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+      <form id="add-form" class="add-form"><label class="sr-only" for="task-input">New task</label><input id="task-input" name="task" placeholder="What would you like to get done?" maxlength="300" required autocomplete="off"><button class="add-button" type="submit"><span aria-hidden="true">+</span> Add task</button></form>
+      <div class="toolbar"><div class="filters" role="group" aria-label="Filter tasks"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="active" aria-pressed="false">Active</button><button type="button" data-filter="completed" aria-pressed="false">Completed</button></div><button type="button" id="clear-completed" class="text-button" disabled>Clear completed</button></div>
+      <ul id="task-list" aria-label="Tasks"></ul>
+      <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">✓</span><h3 id="empty-title">Your day, a blank canvas.</h3><p id="empty-description">Add your first task above. Small steps count.</p></div>
+      <footer class="card-footer"><span id="remaining-count">0 tasks left</span><span>A little progress is still progress.</span></footer>
+    </section>
+    <p id="storage-warning" class="storage-warning" role="alert" hidden></p>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <footer class="page-footer"><span class="footer-dot" aria-hidden="true"></span> Just you and your next step.</footer>
+  </main>
+</body>
+</html>
